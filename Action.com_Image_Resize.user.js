@@ -5,7 +5,7 @@
 // @description When directly viewing an image on Action.com, ensures that the highest resolution image is loaded.
 // @version 1.0
 // @icon http://i.imgur.com/XYzKXzK.png
-// @downloadURL
+// @downloadURL https://github.com/Laurvin/Action.com-Image-Resize/raw/main/Action.com_Image_Resize.user.js
 // @include https://www.action.com/globalassets/*
 // @require https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
 // @grant none
