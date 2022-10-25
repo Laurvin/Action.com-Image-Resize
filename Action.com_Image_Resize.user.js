@@ -3,10 +3,10 @@
 // @namespace Action.com Image Resize
 // @author Laurvin
 // @description When directly viewing an image on Action.com, ensures that the highest resolution image is loaded.
-// @version 1.0
+// @version 1.11
 // @icon http://i.imgur.com/XYzKXzK.png
 // @downloadURL https://github.com/Laurvin/Action.com-Image-Resize/raw/main/Action.com_Image_Resize.user.js
-// @include https://www.action.com/globalassets/*
+// @match https://www.action.com/_next/image/*
 // @require https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
 // @grant none
 // @run-at document-idle
@@ -14,7 +14,12 @@
 
 function DoesItExist() {
     var url = window.location.href;
-    url = (url.split('?')[0]);
+    url = (url.split('?url=')[1]);
+    url = (url.split('&')[0]);
+    url = decodeURIComponent(url);
+    url = url.replace('https://', 'https://www.');
+    window.location.replace(url);
+/*
     if (url == window.location.href) return;
     $.ajax({
         url: url,
@@ -27,6 +32,7 @@ function DoesItExist() {
             console.log('error');
         }
     });
+     */
 }
 
 DoesItExist();
